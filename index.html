@@ -2,149 +2,85 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículum Vitae - Didimo Jeremías Soria Soria</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV - Jeremías Soria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Didimo Jeremías Soria Soria</h1>
-        <p>Ingeniero de Empresas</p>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Jeremías Soria</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Educación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experiencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <section id="datos-personales">
-        <h2>Datos Personales</h2>
-        <ul>
-            <li><strong>Cédula de Ciudadanía:</strong> 060473705 – 6</li>
-            <li><strong>Edad:</strong> 31</li>
-            <li><strong>Ciudad:</strong> Riobamba</li>
-            <li><strong>Provincia:</strong> Chimborazo</li>
-            <li><strong>Dirección:</strong> Cdla. Héctor Cobos. Calle 19 y calle Z, Cód. Postal: 092402.</li>
-            <li><strong>Celular:</strong> 09 9775 6470</li>
-            <li><strong>Correo Electrónico:</strong> dsoria@espoch.edu.ec</li>
-        </ul>
+    <!-- Sección Sobre mí -->
+    <section id="about" class="container text-center my-5">
+        <h2 class="text-primary">Sobre mí</h2>
+        <p>Soy Jeremías Soria, Ingeniero en Administración de Empresas con experiencia en logística y operaciones.</p>
     </section>
 
-    <section id="instruccion">
-        <h2>Instrucción</h2>
-        <table>
-            <tr>
-                <th>Nivel de Instrucción</th>
-                <th>Nombre de la Institución</th>
-                <th>Especialización</th>
-                <th>Título</th>
-                <th>Registro SENESCYT</th>
-            </tr>
-            <tr>
-                <td>Primaria</td>
-                <td>Nuevo Amanecer</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Secundaria</td>
-                <td>Colegio Técnico 21 de Abril</td>
-                <td>Mecánica Industrial</td>
-                <td>Mecánico Industrial</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Profesional (Tercer Nivel)</td>
-                <td>Escuela Superior Politécnica de Chimborazo</td>
-                <td>Administración de Empresas</td>
-                <td>Ingeniero de Empresas</td>
-                <td>1002-2017-1838472</td>
-            </tr>
-        </table>
+    <!-- Sección Educación -->
+    <section id="education" class="container my-5">
+        <h2 class="text-primary text-center">Educación</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingeniería en Administración de Empresas</h5>
+                        <p class="card-text">Escuela Superior Politécnica de Chimborazo</p>
+                        <p>Registro SENESCYT: 1002-2017-1838472</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Mecánica Industrial</h5>
+                        <p class="card-text">Colegio Técnico 21 de Abril</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="experiencia-laboral">
-        <h2>Experiencia Laboral</h2>
-        <table>
-            <tr>
-                <th>Tiempo de Labor</th>
-                <th>Empresa</th>
-                <th>Denominación del Puesto</th>
-                <th>Responsabilidades</th>
-                <th>Razón de Salida</th>
-            </tr>
-            <tr>
-                <td>13/10/2014 - 22/05/2015</td>
-                <td>Ecuacargas S.A.</td>
-                <td>Logística y Operaciones</td>
-                <td>Gestión de procesos de exportación e importación.</td>
-                <td>Pasantías</td>
-            </tr>
-        </table>
+    <!-- Sección Experiencia -->
+    <section id="experience" class="container my-5">
+        <h2 class="text-primary text-center">Experiencia Laboral</h2>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Logística y Operaciones</h5>
+                <p class="card-text">OPERADORA Y CONSOLIDADORA INTERNACIONAL DE CARGAS ECUACARGAS S.A.</p>
+                <p>Gestión de procesos de exportación e importación</p>
+                <p><strong>Período:</strong> Octubre 2014 - Mayo 2015</p>
+            </div>
+        </div>
     </section>
 
-    <section id="capacitacion">
-        <h2>Capacitación Específica</h2>
-        <table>
-            <tr>
-                <th>Nombre del Evento</th>
-                <th>Año</th>
-                <th>Horas</th>
-                <th>Días</th>
-            </tr>
-            <tr>
-                <td>Curso de Capacitación Tributaria</td>
-                <td>2015</td>
-                <td>20</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>Análisis y Visualización de Datos con Excel</td>
-                <td>2018</td>
-                <td>100</td>
-                <td>120</td>
-            </tr>
-            <tr>
-                <td>Curso de Conducción Tipo C</td>
-                <td>2013</td>
-                <td>480</td>
-                <td>180</td>
-            </tr>
-        </table>
+    <!-- Sección Contacto -->
+    <section id="contact" class="container text-center my-5">
+        <h2 class="text-primary">Contacto</h2>
+        <p>Email: dsoria@espoch.edu.ec</p>
+        <p>Celular: 09 9775 6470</p>
     </section>
 
-    <section id="idiomas">
-        <h2>Idiomas</h2>
-        <table>
-            <tr>
-                <th>Idioma</th>
-                <th>Hablado %</th>
-                <th>Escrito %</th>
-                <th>Comprensión %</th>
-            </tr>
-            <tr>
-                <td>Inglés, B2.: CEFR</td>
-                <td>50</td>
-                <td>75</td>
-                <td>75</td>
-            </tr>
-            <tr>
-                <td>Kichwa</td>
-                <td>100</td>
-                <td>75</td>
-                <td>100</td>
-            </tr>
-        </table>
-    </section>
-
-    <section id="referencias">
-        <h2>Referencias</h2>
-        <ul>
-            <li><strong>Cesar Cecilio Guamán Pingos:</strong> 0981263370</li>
-            <li><strong>Panadería y Pastelería Britany:</strong> RUC: 0604937599001</li>
-            <li><strong>Magali Monserrate Giler:</strong> 042 298 9130</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>Declaro que todos los datos que incluyo en este resumen son verdaderos y no he ocultado ningún acto o hecho, por lo que asumo cualquier responsabilidad.</p>
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2025 Jeremías Soria - Todos los derechos reservados</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
