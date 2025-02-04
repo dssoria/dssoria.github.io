@@ -1,97 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0 0 60px; /* Margen inferior para evitar que el footer cubra contenido */
-    background-color: #f4f4f4;
-    color: #333;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
+.card {
+    margin-top: 20px;
 }
 
-header h1 {
-    margin: 0;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Permite el desplazamiento horizontal en tablas */
-}
-
-h2 {
-    color: #4CAF50;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    min-width: 600px; /* Ancho mínimo para evitar que la tabla se comprima demasiado */
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #f4f4f4;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Estilos responsivos para móviles */
-@media (max-width: 768px) {
-    section {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto; /* Permite el desplazamiento horizontal en móviles */
-        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    }
-
-    th, td {
-        min-width: 120px; /* Ancho mínimo para celdas */
-    }
-
-    /* Ocultar columnas menos importantes en móviles */
-    table tr td:nth-child(4),
-    table tr th:nth-child(4),
-    table tr td:nth-child(5),
-    table tr th:nth-child(5) {
-        display: none;
-    }
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
