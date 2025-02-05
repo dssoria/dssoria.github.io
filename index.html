@@ -43,6 +43,24 @@
                         <p class="card-text">Escuela Superior Politécnica de Chimborazo</p>
                         <p class="card-text">Graduado en el año 2017</p>
                         <p>Registro SENESCYT: 1002-2017-1838472</p>
+                        <p>
+    <a href="https://www.senescyt.gob.ec/web/guest/consultas" target="_blank" class="btn btn-primary" onclick="setTimeout(autoFillForm, 3000);">
+        Consultar en SENESCYT
+    </a>
+</p>
+
+<script>
+function autoFillForm() {
+    let newTab = window.open("https://www.senescyt.gob.ec/web/guest/consultas", "_blank");
+
+    setTimeout(() => {
+        if (newTab) {
+            newTab.document.querySelector("input[name='apellidos']").value = "Soria Soria";
+            newTab.document.querySelector("input[name='identificacion']").value = "0604737056";
+        }
+    }, 5000);
+}
+</script>
                     </div>
                 </div>
             </div>
