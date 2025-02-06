@@ -9,16 +9,3 @@ body {
 .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.card {
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
-    border: 1px solid #ddd;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.rounded-circle {
-    border: 2px solid #007bff;
-    padding: 5px;
-}
