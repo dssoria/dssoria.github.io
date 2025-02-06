@@ -78,6 +78,21 @@
                 <p><strong>Período:</strong> Septiembre 2017 - Febrero 2025</p>
             </div>
         </div>
+        <div class="container text-center my-5">
+    <h2 class="text-primary">Documento PDF</h2>
+    <p>Haz clic en el botón para mostrar u ocultar el documento.</p>
+    <button class="btn btn-secondary" onclick="togglePDF()">Ver Documento</button>
+    <div id="pdfViewer" style="display: none; margin-top: 20px;">
+        <embed src="permiso.pdf" type="application/pdf" width="100%" height="500px">
+    </div>
+</div>
+
+<script>
+function togglePDF() {
+    var pdfViewer = document.getElementById("pdfViewer");
+    pdfViewer.style.display = pdfViewer.style.display === "none" ? "block" : "none";
+}
+        </script>
     </section>
 
     <!-- Sección Contacto -->
