@@ -78,29 +78,6 @@
                 <p><strong>Período:</strong> Septiembre 2017 - Febrero 2025</p>
             </div>
         </div>
-        <div class="container text-center my-5">
-    <h2 class="text-primary">Documento PDF</h2>
-    <p>Haz clic en el botón para ver una vista previa del documento.</p>
-    <button class="btn btn-secondary" onclick="showPDF()">Ver Documento</button>
-
-    <!-- Contenedor de la vista previa -->
-    <div id="pdfContainer" style="display: none; margin-top: 20px;">
-        <iframe id="pdfViewer" src="" width="100%" height="600px" style="border: none;"></iframe>
-    </div>
-</div>
-
-<script>
-function showPDF() {
-    var pdfViewer = document.getElementById("pdfViewer");
-    var pdfContainer = document.getElementById("pdfContainer");
-
-    if (!pdfViewer.src) {
-        pdfViewer.src = "permiso.pdf"; // Cambia esta URL por la tuya
-    }
-    
-    pdfContainer.style.display = "block";
-}
-</script>
     <!-- Sección Contacto -->
     <section id="contact" class="container text-center my-5">
         <h2 class="text-primary">Contacto</h2>
