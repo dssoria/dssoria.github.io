@@ -9,9 +9,9 @@ body {
 .navbar {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+/* Estilos para el iframe */
 #pdf-viewer {
     width: 100%;
-    height: 600px;
+    height: 500px;
     border: none;
-    display: none; /* Oculto inicialmente */
 }
