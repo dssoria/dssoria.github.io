@@ -77,13 +77,22 @@
                 <p><strong>PERMISO DE OPERACIÓN ATM-TAX-026-001-012:</strong> Habilita la operación en la ciudad de GUAYAQUIL a los vehículos que constan en el mismo y cumplieron con los requisitos previstos en la Ley y demás Normas y Reglamentos.</p>
                 <p><strong>Período:</strong> Septiembre 2017 - Febrero 2025</p>
             </div>
-            <iframe
-      src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/dssoria/dssoria.github.io/main/permiso.pdf"
-      width="100%"
-      height="600px"
-      style="border: none;">
-            </iframe>
+             <!-- Enlace para abrir el visor -->
+        <a href="#" id="open-pdf">Ver permiso de operación</a>
         </div>
+        <!-- Contenedor para el iframe -->
+        <div id="viewer-container">
+            <iframe id="pdf-viewer" src=""></iframe>
+        </div>
+        <!-- Script para manejar el clic -->
+        <script>
+            document.getElementById('open-pdf').addEventListener('click', function(event) {
+                event.preventDefault(); // Evita que el enlace redirija
+                const iframe = document.getElementById('pdf-viewer');
+                iframe.src = "https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/dssoria/dssoria.github.io/main/permiso.pdf";
+                iframe.style.display = 'block'; // Muestra el iframe
+        });
+        </script>
     <!-- Sección Contacto -->
     <section id="contact" class="container text-center my-5">
         <h2 class="text-primary">Contacto</h2>
