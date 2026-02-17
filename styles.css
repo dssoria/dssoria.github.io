@@ -15,3 +15,7 @@ body {
     height: 500px;
     border: none;
 }
+
+main .card {
+    border: 0;
+}
