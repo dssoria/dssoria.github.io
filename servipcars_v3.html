@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Solicitar Carrera</title>
+
+        <style>
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background: #f0f2f5;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .card {
+                background: white;
+                max-width: 450px;
+                width: 100%;
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                text-align: center;
+                color: #1a73e8;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+            }
+
+            #map {
+                height: 300px;
+                border-radius: 10px;
+                margin: 15px 0;
+            }
+
+            .info {
+                background: #e8f0fe;
+                padding: 10px;
+                border-radius: 8px;
+                display: none;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                background: #25D366;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #128C7E;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="card">
+            <h2>🚕 Solicitar Carrera</h2>
+
+            <input id="origen" placeholder="Origen">
+            <input id="destino" placeholder="Destino">
+
+            <div id="map"></div>
+
+            <div id="info" class="info">
+                <p>📏 <span id="dist"></span></p>
+                <p>⏱️ <span id="time"></span></p>
+                <p>💰 $<span id="price"></span></p>
+            </div>
+
+            <button onclick="enviar()">Enviar por WhatsApp</button>
+        </div>
+
+        <script>
+            let map, directionsService, directionsRenderer;
+            let distancia, tiempo, costo;
+
+            const tarifaKm = 0.50; // tarifa Ecuador
+
+            function initMap() {
+
+                const centro = {
+                    lat: -2.19616,
+                    lng: -79.88621
+                }; // Guayaquil aprox
+
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: centro,
+                    zoom: 13
+                });
+
+                directionsService = new google.maps.DirectionsService();
+                directionsRenderer = new google.maps.DirectionsRenderer({
+                    map
+                });
+
+                const origenInput = new google.maps.places.Autocomplete(document.getElementById("origen"));
+                const destinoInput = new google.maps.places.Autocomplete(document.getElementById("destino"));
+
+                origenInput.addListener("place_changed", calcular);
+                destinoInput.addListener("place_changed", calcular);
+            }
+
+            function calcular() {
+
+                const origen = document.getElementById("origen").value;
+                const destino = document.getElementById("destino").value;
+
+                if (!origen || !destino) return;
+
+                directionsService.route({
+                    origin: origen,
+                    destination: destino,
+                    travelMode: "DRIVING"
+                }, (res, status) => {
+
+                    if (status !== "OK") {
+                        alert("Error calculando ruta: " + status);
+                        return;
+                    }
+
+                    directionsRenderer.setDirections(res);
+
+                    const leg = res.routes[0].legs[0];
+
+                    distancia = leg.distance.text;
+                    tiempo = leg.duration.text;
+
+                    const km = leg.distance.value / 1000;
+                    costo = (km * tarifaKm).toFixed(2);
+
+                    document.getElementById("dist").innerText = "Distancia: " + distancia;
+                    document.getElementById("time").innerText = "Tiempo: " + tiempo;
+                    document.getElementById("price").innerText = costo;
+
+                    document.getElementById("info").style.display = "block";
+                });
+            }
+
+            function enviar() {
+
+                const origen = document.getElementById("origen").value;
+                const destino = document.getElementById("destino").value;
+
+                if (!origen || !destino) {
+                    alert("Completa la ruta");
+                    return;
+                }
+
+                const telefono = "593997756470";
+
+                const msg = `🚖 NUEVA CARRERA
+                    Origen: ${origen}
+                    Destino: ${destino}
+                    Distancia: ${distancia}
+                    Tiempo: ${tiempo}
+                    Costo: $${costo}`;
+
+                window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(msg)}`);
+            }
+        </script>
+
+        <!-- IMPORTANTE -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=places&callback=initMap">
+        </script>
+
+    </body>
+
+</html>
